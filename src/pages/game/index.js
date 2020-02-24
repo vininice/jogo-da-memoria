@@ -1,10 +1,8 @@
 const $root = document.querySelector("#root");
 
 const $cardsWrapper = createCardsWrapper();
-const $memoryCard = createMemoryCard(
-  "img/icon-collabcode.png",
-  "icone collabcode"
-);
+
+const createMemoryCard = memoryCard();
 
 const $memoryCardC = createMemoryCard({
   nameClass: "-front",
