@@ -5,18 +5,35 @@ const $memoryCard = createMemoryCard(
   "img/icon-collabcode.png",
   "icone collabcode"
 );
-const $memoryCardFront = createMemoryCard(
-  "img/icon-c.png",
-  "icone c++",
-  "-front"
-);
 
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
+const $memoryCardC = createMemoryCard({
+  nameClass: "-front",
+  src: "img/icon-c.png",
+  alt: "icone C++"
+});
+
+const $memoryCardJs = createMemoryCard({
+  src: "img/icon-js.png",
+  alt: "icone javascript",
+  nameClass: "-front"
+});
+const $memoryCardJava = createMemoryCard({
+  src: "img/icon-java.png",
+  alt: "icone java",
+  nameClass: "-front"
+});
+const $memoryCardPhp = createMemoryCard({
+  src: "img/icon-php.png",
+  alt: "icone php",
+  nameClass: "-front"
+});
+
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJs);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJs);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
 $root.insertAdjacentElement("beforeend", $cardsWrapper);
