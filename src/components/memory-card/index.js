@@ -81,5 +81,20 @@ const memoryCard = () => {
 };
 
 const handleClick = $el => {
-  $el.classList.toggle("-active");
+  if (qtdActiveMemoryCard < 2) {
+    $el.classList.toggle("-active");
+  }
+
+  if (qtdActiveMemoryCard === 1) {
+    setTimeout(() => {
+      const $ActiveMemoryCards = document.querySelectorAll(
+        ".memory-card.-active"
+      );
+
+      $ActiveMemoryCards.forEach($memoryCard => {
+        $memoryCard.classList.remove("-active");
+      });
+      qtdActiveMemoryCard = 0;
+    }, 1500);
+  }
 };
