@@ -79,36 +79,45 @@ const memoryCard = () => {
      </div>
    `;
 };
-let score = 0;
+
 const handleClick = $el => {
-  if (!$el.classList.contains("-active")) {
-    if (qtdActiveMemoryCard < 2) {
-      $el.classList.toggle("-active");
-    }
-
-    if (qtdActiveMemoryCard === 1) {
-      const $memoryCards = document.querySelectorAll(".memory-card.-active");
-      if (
-        $memoryCards[0].querySelector(".-front .icon").getAttribute("src") ===
-        $memoryCards[1].querySelector(".-front .icon").getAttribute("src")
-      ) {
-        score++;
-        $memoryCards.forEach($memoryCard => {
-          $memoryCard.classList.add("-score");
-          $memoryCard.classList.remove("-active");
-        });
-      } else {
-        setTimeout(() => {
-          const $ActiveMemoryCards = document.querySelectorAll(
-            ".memory-card.-active"
-          );
-
-          $ActiveMemoryCards.forEach($memoryCard => {
-            $memoryCard.classList.remove("-active");
-          });
-          qtdActiveMemoryCard = 0;
-        }, 1500);
-      }
-    }
+  if (!$el.classList.contains("-active") && !$el.classList.contains("-score")) {
+    activeMemoryCard($el);
+    checkSure();
   }
 };
+
+function activeMemoryCard($el) {
+  if (qtdActiveMemoryCard < 2) {
+    $el.classList.add("-active");
+  }
+}
+
+function checkSure() {
+  if (qtdActiveMemoryCard === 1) {
+    const $memoryCards = document.querySelectorAll(".memory-card.-active");
+    if (
+      $memoryCards[0].querySelector(".-front .icon").getAttribute("src") ===
+      $memoryCards[1].querySelector(".-front .icon").getAttribute("src")
+    ) {
+      store.score++;
+      $memoryCards.forEach($memoryCard => {
+        $memoryCard.classList.add("-score");
+        $memoryCard.classList.remove("-active");
+      });
+
+      console.log(store.score);
+    } else {
+      setTimeout(() => {
+        const $ActiveMemoryCards = document.querySelectorAll(
+          ".memory-card.-active"
+        );
+
+        $ActiveMemoryCards.forEach($memoryCard => {
+          $memoryCard.classList.remove("-active");
+        });
+        qtdActiveMemoryCard = 0;
+      }, 1000);
+    }
+  }
+}
