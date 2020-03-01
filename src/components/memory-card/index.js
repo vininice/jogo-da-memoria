@@ -112,7 +112,8 @@ const memoryCard = (function() {
           $memoryCard.classList.remove("-active");
         });
 
-        console.log(store.score);
+        document.querySelector(".point-bar > .number").textContent =
+          store.score;
       } else {
         setTimeout(() => {
           const $ActiveMemoryCards = document.querySelectorAll(
