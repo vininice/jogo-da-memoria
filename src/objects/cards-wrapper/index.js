@@ -12,6 +12,7 @@ function createCardsWrapper() {
     justify-content: space-around;
     padding: 10px 0;
     width: 100vw;
+    
   }
   
   .cards-wrapper > div{

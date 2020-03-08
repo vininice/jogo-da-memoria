@@ -29,14 +29,10 @@ const gameButton = (function() {
     $head.insertBefore($style, null);
   };
 
-  module.handleClick = () => {
-    console.log(this);
-  };
-
-  module.render = () => {
+  module.render = content => {
     module._style();
     return `
-            <button class="game-button" onClick="gameButton.handleClick()">start</button>
+            <button class="game-button" ">${content}</button>
         `;
   };
 

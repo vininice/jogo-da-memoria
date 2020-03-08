@@ -10,10 +10,9 @@ const transparencyLayer = (function() {
         background-color: rgba(58, 64,66, 0.5);
         height: 100vh;
         width: 100vw;
-        position: absolute;
+        position: fixed;
         top:0;
-     
-   
+        
       }
     `;
 
