@@ -1,6 +1,4 @@
 * {
-  /* box-sizing: border-box; */
-  /* overflow: hidden; */
   margin: 0;
   padding: 0;
 }
@@ -8,4 +6,5 @@
 button,
 input {
   font-family: inherit;
+  border: none;
 }
