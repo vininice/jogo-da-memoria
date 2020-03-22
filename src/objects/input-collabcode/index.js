@@ -16,6 +16,9 @@ const inputCollabCode = (function() {
         padding-top: 12px;
         width: 100%;
       }
+      .input-collabcode + .label-collabcode {
+        margin-top: 30px;
+      }
     `;
     $head.insertAdjacentElement("beforeend", $style);
   };
@@ -23,7 +26,7 @@ const inputCollabCode = (function() {
   module.render = () => {
     module._style();
     return `
-      <input class="input-collabcode" type="email" placeholder=""/>
+      <input class="input-collabcode" type="text" placeholder=""/>
     `;
   };
 

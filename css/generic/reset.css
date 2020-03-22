@@ -15,4 +15,5 @@ button,
 input {
   font-family: "Comfortaa", sans-serif;
   border: 0;
+  outline: none;
 }
