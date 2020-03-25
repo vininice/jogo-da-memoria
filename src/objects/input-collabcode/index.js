@@ -20,13 +20,14 @@ const inputCollabCode = (function() {
         margin-top: 30px;
       }
     `;
-    $head.insertAdjacentElement("beforeend", $style);
+    $head.insertBefore($style, null);
   };
 
-  module.render = () => {
+  module.render = (placeholder = "") => {
     module._style();
     return `
-      <input class="input-collabcode" type="text" placeholder=""/>
+    
+      <input class="input-collabcode" type="text" placeholder="${placeholder}" />
     `;
   };
 

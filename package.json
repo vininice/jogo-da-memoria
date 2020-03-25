@@ -1,0 +1,23 @@
+{
+  "name": "jogo-da-memoria",
+  "version": "1.0.0",
+  "description": "jogo da memória feito com js vanilla, html e css",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vininice/jogo-da-memoria.git"
+  },
+  "author": "Cleyton Vinicius Rodrigues Costa",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/vininice/jogo-da-memoria/issues"
+  },
+  "homepage": "https://github.com/vininice/jogo-da-memoria#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

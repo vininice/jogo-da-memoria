@@ -3,16 +3,16 @@ const formSingup = (function() {
 
   module._children = () => {
     const $emailLabel = labelCollabCode.render("E-mail");
-    const $inputEmail = inputCollabCode.render();
+    const $inputEmail = inputCollabCode.render("joao@gmail.com");
 
     const $usernameLabel = labelCollabCode.render("User Name");
-    const $usernameInput = inputCollabCode.render();
+    const $usernameInput = inputCollabCode.render("joao da silva");
 
     const $passwordLabel = labelCollabCode.render("Password");
-    const $passwordInput = inputCollabCode.render();
+    const $passwordInput = inputCollabCode.render("******");
 
     const $confirmPasswordLabel = labelCollabCode.render("Confirm Password");
-    const $confirmPasswordInput = inputCollabCode.render();
+    const $confirmPasswordInput = inputCollabCode.render("******");
 
     const $bnt = btnCollabCode.render("Singup");
 
