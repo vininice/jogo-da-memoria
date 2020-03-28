@@ -1,14 +1,8 @@
-const formSingup = (function() {
+const formLogin = (function() {
   const module = {};
 
   module._children = () => {
-    const $emailLabel = labelCollabCode.render("E-mail");
-    const $inputEmail = inputCollabCode.render({
-      placeholder: "joao@gmail.com",
-      type: "email"
-    });
-
-    const $usernameLabel = labelCollabCode.render("User Name");
+    const $usernameLabel = labelCollabCode.render("Username ou e-mail");
     const $usernameInput = inputCollabCode.render({
       placeholder: "joao da silva"
     });
@@ -19,33 +13,27 @@ const formSingup = (function() {
       type: "password"
     });
 
-    const $confirmPasswordLabel = labelCollabCode.render("Confirm Password");
-    const $confirmPasswordInput = inputCollabCode.render({
-      placeholder: "******",
-      type: "password"
-    });
+    const $bnt = btnCollabCode.render("Login");
 
-    const $bnt = btnCollabCode.render("Singup");
+    const $link = linkCollabCode.render({ content: "Forget password ?" });
 
     return `
-            ${$emailLabel}
-            ${$inputEmail}
             ${$usernameLabel}
             ${$usernameInput}
+            
             ${$passwordLabel}
             ${$passwordInput}
-            ${$confirmPasswordLabel}
-            ${$confirmPasswordInput}
+            ${$link}
+           
             ${$bnt}
         `;
   };
-
   module._style = () => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
 
     $style.textContent = `
-        .form-singup {
+        .form-login {
             padding: 0 35px 40px;
         }
       `;
@@ -56,7 +44,7 @@ const formSingup = (function() {
   module.render = () => {
     module._style();
     return `
-        <form class="form-singup" action="" method="POST">${module._children()}</form>
+        <form class="form-login" action="" method="POST">${module._children()}</form>
       `;
   };
 
