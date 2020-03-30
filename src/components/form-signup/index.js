@@ -1,4 +1,4 @@
-const formSingup = (function() {
+const formSignup = (function() {
   const module = {};
 
   module._children = () => {
@@ -25,7 +25,7 @@ const formSingup = (function() {
       type: "password"
     });
 
-    const $bnt = btnCollabCode.render("Singup");
+    const $bnt = btnCollabCode.render({ content: "Signup", path: "login" });
 
     return `
             ${$emailLabel}
@@ -45,7 +45,7 @@ const formSingup = (function() {
     const $style = document.createElement("style");
 
     $style.textContent = `
-        .form-singup {
+        .form-signup {
             padding: 0 35px 40px;
         }
       `;
@@ -56,7 +56,7 @@ const formSingup = (function() {
   module.render = () => {
     module._style();
     return `
-        <form class="form-singup" action="" method="POST">${module._children()}</form>
+        <form class="form-signup" action="" method="POST">${module._children()}</form>
       `;
   };
 

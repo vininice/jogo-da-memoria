@@ -1,4 +1,4 @@
-const logoCollabCode = (function() {
+const logoCollabcode = (function() {
   const module = {};
 
   module._style = () => {
@@ -25,7 +25,7 @@ const logoCollabCode = (function() {
     module._style();
     return `
     <figure class="logo-collabcode">
-      <img class="logo" src="./img/icon-collabcode.png" />
+      <img class="logo" src="/img/icon-collabcode.png" />
     </figure>
     `;
   };

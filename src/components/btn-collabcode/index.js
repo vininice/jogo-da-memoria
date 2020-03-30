@@ -25,14 +25,20 @@ const btnCollabCode = (function() {
     $head.insertBefore($style, null);
   };
 
-  module.render = content => {
+  module.handleClick = (event, path) => {
+    event.preventDefault();
+    window.location.hash = `#/${path}`;
+  };
+
+  module.render = ({ content = "", path }) => {
     module._style();
     return `
-        <input class="btn-collabcode" type="submit" value=${content} />
+        <input onClick="btnCollabCode.handleClick(event, '${path}')" class="btn-collabcode" type="submit" value=${content} />
       `;
   };
 
   return {
-    render: module.render
+    render: module.render,
+    handleClick: module.handleClick
   };
 })();

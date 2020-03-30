@@ -19,6 +19,8 @@ const flatButton = (function() {
               float: ${module._id == 1 ? "left" : "unset"};
               padding-top: 60px;
               text-decoration: none;
+              cursor: pointer;
+              
                            
             }
         `;
@@ -26,14 +28,22 @@ const flatButton = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = (content = "", active = false) => {
+  module.handleClick = path => {
+    console.log(path);
+    window.location.hash = `#/${path}`;
+  };
+
+  module.render = (content = "", active = false, path) => {
     module._id++;
     module._style(active);
     return `
-            <a href="#" class="flat-button-${module._id} ">${content}</a>
+            <a 
+            class="flat-button-${module._id}" 
+            onClick="flatButton.handleClick('${path}')" >${content}</a>
         `;
   };
   return {
-    render: module.render
+    render: module.render,
+    handleClick: module.handleClick
   };
 })();
