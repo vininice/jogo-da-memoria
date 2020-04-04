@@ -1,4 +1,4 @@
-const btnCollabCode = (function() {
+const btnCollabCode = (function () {
   const module = {};
 
   module._style = () => {
@@ -27,7 +27,8 @@ const btnCollabCode = (function() {
 
   module.handleClick = (event, path) => {
     event.preventDefault();
-    window.location.hash = `#/${path}`;
+    location.hash = `#/${path}`;
+    location.reload(true);
   };
 
   module.render = ({ content = "", path }) => {
@@ -39,6 +40,6 @@ const btnCollabCode = (function() {
 
   return {
     render: module.render,
-    handleClick: module.handleClick
+    handleClick: module.handleClick,
   };
 })();

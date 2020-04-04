@@ -1,7 +1,7 @@
-const flatButton = (function() {
+const flatButton = (function () {
   const module = {};
   module._id = 0;
-  module._style = active => {
+  module._style = (active) => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
 
@@ -28,9 +28,10 @@ const flatButton = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.handleClick = path => {
+  module.handleClick = (path) => {
     console.log(path);
-    window.location.hash = `#/${path}`;
+    location.hash = `#/${path}`;
+    location.reload(true);
   };
 
   module.render = (content = "", active = false, path) => {
@@ -44,6 +45,6 @@ const flatButton = (function() {
   };
   return {
     render: module.render,
-    handleClick: module.handleClick
+    handleClick: module.handleClick,
   };
 })();
